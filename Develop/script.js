@@ -1,11 +1,43 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
+
+//test
+let cat = [{firstName: "Kim", lastName: "Desveaux", salary: 100000}, {firstName: "Brian", lastName: "Desaux", salary: 1778000}];
+
+console.log(cat);
+console.log(cat[0].lastName);
+console.log(cat[1].salary);
+
+
+/*
+
 // Collect employee data
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
-}
+// to get an array of employee objects, we need to create an object - so what
+//is the object? Employee (firstName, lastName, salary)
+/*
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+/
 
+/
+
+const person = {};
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+
+let employee = {{firstName: "Kim", lastName: "Desveaux", salary: 100,000}, {firstName: "Kim", lastName: "Desveaux", salary: 100,000}};
+console.log(employee[0].firstName);
+}
+*/
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
@@ -22,6 +54,7 @@ const getRandomEmployee = function(employeesArray) {
   Do not modify any of the code below this line:
 */
 
+/*
 // Display employee data in an HTML table
 const displayEmployees = function(employeesArray) {
   // Get the employee table
@@ -81,3 +114,4 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
+*/
