@@ -1,18 +1,7 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-
-
-/*test
-let cat = [{firstName: "Kim", lastName: "Desveaux", salary: 100000}, {firstName: "Brian", lastName: "Desaux", salary: 1778000}];
-
-console.log(cat);
-console.log(cat[0].lastName);
-console.log(cat[1].salary);
-*/
-
-
-const employeeArr = [];
+const employeesArray = [];
 
 // Collect employee data
 const collectEmployees = function() {
@@ -20,57 +9,45 @@ const collectEmployees = function() {
 // to get an array of employee objects, we need to create an object - so what
 //is the object? Employee (firstName, lastName, salary)
 
-let fName = prompt('Enter your first name: ');
-let lName = prompt('Enter your last name: ');
-let salary = prompt('Enter your salary: ');
+  let fName = prompt('Enter your first name: ');
+  let lName = prompt('Enter your last name: ');
+  let salary = prompt('Enter your salary: ');
 
-if (employeeArr.length === 0) {
-  employeeArr[0] = {firstName: fName, lastName: lName, salary1: salary};
-} else {
-  employeeArr[employeeArr.length] = {firstName: fName, lastName: lName, salary1: salary};
+  if (employeesArray.length === 0) {
+    employeesArray[0] = {firstName: fName, lastName: lName, salary1: salary};
+  } else {
+    employeesArray[employeesArray.length] = {firstName: fName, lastName: lName, salary1: salary};
+    }
+
+  let repeat = prompt('Do you have more employees to add? Please enter y or yes')
+  if (repeat === 'y' || repeat === 'yes' || repeat === 'Y') {
+    collectEmployees();
   }
 
-
-let repeat = prompt('Do you have more employees to add?')
-if (repeat === 'y' || repeat === 'yes') {
-  collectEmployees();
+ return employeesArray;
+ 
 }
 
 
-console.log(employeeArr);
-console.log(employeeArr.length);
-}
 
-collectEmployees();
-/*
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
-};
-/
-
-/*
-
-const person = {};
-person.firstName = "John";
-person.lastName = "Doe";
-person.age = 50;
-person.eyeColor = "blue";
-
-let employee = {{firstName: "Kim", lastName: "Desveaux", salary: 100,000}, {firstName: "Kim", lastName: "Desveaux", salary: 100,000}};
-console.log(employee[0].firstName);
-}
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
+const displayAverageSalary = function(employees) {
   // TODO: Calculate and display the average salary
+  console.log("these are the employees " + employees);
+  let salaryTotal = 0;
+  for (let i = 0; i < employees.length; i++) {
+    salaryTotal = salaryTotal + employees[i].salary;
+  }
+  let salaryAverage = salaryTotal / employeesArray.length;
+  console.log("test " + salaryTotal + ' next ' + salaryAverage);
+  
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  let randomEmployee = employeesArray[0].firstName;
 }
 
 /*
@@ -79,7 +56,7 @@ const getRandomEmployee = function(employeesArray) {
   Do not modify any of the code below this line:
 */
 
-/*
+
 // Display employee data in an HTML table
 const displayEmployees = function(employeesArray) {
   // Get the employee table
@@ -120,11 +97,11 @@ const trackEmployeeData = function() {
 
   console.table(employees);
 
-  displayAverageSalary(employees);
+  //displayAverageSalary(employees);
 
   console.log('==============================');
 
-  getRandomEmployee(employees);
+  //getRandomEmployee(employees);
 
   employees.sort(function(a,b) {
     if (a.lastName < b.lastName) {
@@ -139,4 +116,3 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
-*/
