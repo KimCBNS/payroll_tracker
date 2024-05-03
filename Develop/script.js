@@ -2,21 +2,46 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 
-//test
+
+/*test
 let cat = [{firstName: "Kim", lastName: "Desveaux", salary: 100000}, {firstName: "Brian", lastName: "Desaux", salary: 1778000}];
 
 console.log(cat);
 console.log(cat[0].lastName);
 console.log(cat[1].salary);
+*/
 
 
-/*
+const employeeArr = [];
 
 // Collect employee data
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
 // to get an array of employee objects, we need to create an object - so what
 //is the object? Employee (firstName, lastName, salary)
+
+let fName = prompt('Enter your first name: ');
+let lName = prompt('Enter your last name: ');
+let salary = prompt('Enter your salary: ');
+
+if (employeeArr.length === 0) {
+  employeeArr[0] = {firstName: fName, lastName: lName, salary1: salary};
+} else {
+  employeeArr[employeeArr.length] = {firstName: fName, lastName: lName, salary1: salary};
+  }
+
+
+let repeat = prompt('Do you have more employees to add?')
+if (repeat === 'y' || repeat === 'yes') {
+  collectEmployees();
+}
+
+
+console.log(employeeArr);
+console.log(employeeArr.length);
+}
+
+collectEmployees();
 /*
 const person = {
   firstName: "John",
@@ -26,7 +51,7 @@ const person = {
 };
 /
 
-/
+/*
 
 const person = {};
 person.firstName = "John";
@@ -37,7 +62,7 @@ person.eyeColor = "blue";
 let employee = {{firstName: "Kim", lastName: "Desveaux", salary: 100,000}, {firstName: "Kim", lastName: "Desveaux", salary: 100,000}};
 console.log(employee[0].firstName);
 }
-*/
+
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
