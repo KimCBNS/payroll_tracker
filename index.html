@@ -40,3 +40,21 @@
 </body>
 
 </html>
+
+
+let fName = prompt('Enter your first name: ');
+let lName = prompt('Enter your last name: ');
+let salary = prompt('Enter your salary: ');
+
+if (employeesArray.length === 0) {
+  employeesArray[0] = {firstName: fName, lastName: lName, salary1: salary};
+} else {
+  employeesArray[employeesArray.length] = {firstName: fName, lastName: lName, salary1: salary};
+  }
+
+let repeat = prompt('Do you have more employees to add? Please enter y or yes')
+if (repeat === 'y' || repeat === 'yes' || repeat === 'Y') {
+  collectEmployees();
+}
+
+return employeesArray;
